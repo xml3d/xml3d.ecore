@@ -225,7 +225,6 @@
 		<complexContent>
 			<extension base="xml3d:XML3DDataContainer">
 				<attribute default="" name="map" type="string" />
-				<attribute default="" name="compute" type="string" />
 				<attribute default="" name="script" type="anyURI" ecore:reference="xml3d:ScriptType"/>
 			</extension>
 		</complexContent>
@@ -358,6 +357,7 @@
 						<group ref="xml3d:ValueTypeGroup" />
 					</choice>
 				</sequence>
+				<attribute default="" name="compute" type="string" />
 				<attribute default="" name="proto" type="anyURI"
 					ecore:reference="xml3d:DataType" />
 				<attribute default="" name="src" type="anyURI"

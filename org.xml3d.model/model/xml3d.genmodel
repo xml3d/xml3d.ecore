@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.xml3d.model/src" modelPluginID="org.xml3d.model"
-    modelName="Xml3d" importerID="org.eclipse.xsd.ecore.importer" complianceLevel="6.0"
-    copyrightFields="false">
+    modelName="Xml3d" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.xsd.ecore.importer" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>xml3d_manual.xsd</foreignModel>
   <genPackages prefix="Xml3d" basePackage="org.xml3d._2009" resource="XML" disposableProviderFactory="true"
       ecorePackage="xml3d.ecore#/">
@@ -46,7 +47,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//BoolType/name"/>
     </genClasses>
     <genClasses ecoreClass="xml3d.ecore#//DataType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//DataType/compute"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//DataType/map"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference xml3d.ecore#//DataType/script"/>
     </genClasses>
@@ -229,6 +229,7 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//XML3DDataContainer/int"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//XML3DDataContainer/int4"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//XML3DDataContainer/texture"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//XML3DDataContainer/compute"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference xml3d.ecore#//XML3DDataContainer/proto"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference xml3d.ecore#//XML3DDataContainer/src"/>
     </genClasses>

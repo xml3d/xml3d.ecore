@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.xml3d.org/2009/xml3d"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:xml3d="http://www.xml3d.org/2009/xml3d" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore">
+	<annotation>
+		<documentation>XML3D Specification</documentation>
+	</annotation>
+	<element name="xml3d">
+		<complexType>
+			<complexContent>
+				<extension base="xml3d:XML3DElement">
+					<sequence minOccurs="0" maxOccurs="unbounded" ecore:featureMap="children">
+						<choice>
+							<element ref="xml3d:defs" />
+							<group ref="xml3d:TransformableGroup" />
+						</choice>
+					</sequence>
+					<attribute name="activeView" type="anyURI"
+						ecore:reference="xml3d:ViewType" />
+					<attribute name="width" type="int" />
+					<attribute name="height" type="int" />
+					<attributeGroup ref="xml3d:EventAttributes"></attributeGroup>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="shader" type="xml3d:ShaderType" />
+	<element name="lightshader" type="xml3d:LightShaderType" />
+	<element name="script" type="xml3d:ScriptType">
+		<annotation>
+			<documentation>
+				script statements, which may include CDATA sections
+			</documentation>
+		</annotation>
+	</element>
+
+	<element name="view" type="xml3d:ViewType" />
+
+	<element name="defs">
+		<complexType>
+			<complexContent>
+				<extension base="xml3d:XML3DElement">
+					<sequence ecore:featureMap="children" minOccurs="0" maxOccurs="unbounded">
+						<group ref="xml3d:ReferenceableGroup" />
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+
+	<element name="bool">
+		<complexType>
+			<simpleContent>
+				<extension base="xml3d:BooleanArray">
+					<attribute name="id" type="ID" />
+					<attribute name="name" type="string" use="required" />
+				</extension>
+			</simpleContent>
+		</complexType>
+	</element>
+
+	<element name="float">
+		<complexType>
+			<simpleContent>
+				<extension base="xml3d:FloatArray">
+					<attributeGroup ref="xml3d:ValueAttributes"/>
+				</extension>
+			</simpleContent>
+		</complexType>
+	</element>
+
+	<element name="float2">
+		<complexType>
+			<simpleContent>
+				<extension base="xml3d:Float2Array">
+					<attributeGroup ref="xml3d:ValueAttributes"/>
+				</extension>
+			</simpleContent>
+		</complexType>
+	</element>
+
+	<element name="float3">
+		<complexType>
+			<simpleContent>
+				<extension base="xml3d:Float3Array">
+					<attributeGroup ref="xml3d:ValueAttributes"/>
+				</extension>
+			</simpleContent>
+		</complexType>
+	</element>
+
+	<element name="float4">
+		<complexType>
+			<simpleContent>
+				<extension base="xml3d:Float4Array">
+					<attributeGroup ref="xml3d:ValueAttributes"/>
+				</extension>
+			</simpleContent>
+		</complexType>
+	</element>
+
+	<element name="float4x4">
+		<complexType>
+			<simpleContent>
+				<extension base="xml3d:Float4x4Array">
+					<attributeGroup ref="xml3d:ValueAttributes"/>
+				</extension>
+			</simpleContent>
+		</complexType>
+	</element>
+
+	<element name="int">
+		<complexType>
+			<simpleContent>
+				<extension base="xml3d:IntArray">
+					<attributeGroup ref="xml3d:ValueAttributes"/>
+				</extension>
+			</simpleContent>
+		</complexType>
+	</element>
+
+	<element name="int4">
+		<complexType>
+			<simpleContent>
+				<extension base="xml3d:Int4Array">
+					<attributeGroup ref="xml3d:ValueAttributes"/>
+				</extension>
+			</simpleContent>
+		</complexType>
+	</element>
+
+	<element name="texture">
+		<complexType>
+			<choice minOccurs="1" maxOccurs="1">
+				<element ref="xml3d:img" />
+			</choice>
+				<attributeGroup ref="xml3d:ValueAttributes"/>
+				<attribute default="2D" name="type" type="xml3d:TextureTypes">
+				<annotation>
+					<documentation>
+						Set the dimensions of the texture.
+					</documentation>
+				</annotation>
+			</attribute>
+			<attribute default="linear" name="filterMin" type="xml3d:FilterTypes">
+				<annotation>
+					<documentation>
+						Specifies how to apply the texture if the area
+						to be
+						textured has fewer pixels than the
+						texture.
+					</documentation>
+				</annotation>
+			</attribute>
+			<attribute default="linear" name="filterMag" type="xml3d:FilterTypes">
+				<annotation>
+					<documentation>
+						Specifies how to apply the texture if the area
+						to be
+						textured contains more pixels than the
+						texture.
+					</documentation>
+				</annotation>
+			</attribute>
+			<attribute default="nearest" name="filterMip" type="xml3d:FilterTypes">
+				<annotation>
+					<documentation>
+						Specifies what mipmap level to use, when a
+						minification filter is required for the texture.
+					</documentation>
+				</annotation>
+			</attribute>
+			<attribute default="clamp" name="wrapS" type="xml3d:WrapTypes">
+				<annotation>
+					<documentation>
+						Specifies what happens when the texture
+						coordinates
+						fall outside of the 0.0 to 1.0 range
+						in s direction.
+					</documentation>
+				</annotation>
+			</attribute>
+			<attribute default="clamp" name="wrapT" type="xml3d:WrapTypes">
+				<annotation>
+					<documentation>
+						Specifies what happens when the texture
+						coordinates
+						fall outside of the 0.0 to 1.0 range
+						in t direction.
+					</documentation>
+				</annotation>
+			</attribute>
+			<attribute default="clamp" name="wrapU" type="xml3d:WrapTypes">
+				<annotation>
+					<documentation>
+						Specifies what happens when the texture
+						coordinates
+						fall outside of the 0.0 to 1.0 range
+						in u direction.
+					</documentation>
+				</annotation>
+			</attribute>
+			<attribute default="" name="borderColor" type="string">
+				<annotation>
+					<documentation>
+						Specifies what color to use, if wrapping mode is
+						'border' and texture coordinates fall outside of
+						the 0.0 to 1.0
+						range.
+					</documentation>
+				</annotation>
+			</attribute>
+		</complexType>
+	</element>
+
+	<attributeGroup name="ValueAttributes">
+		<attribute name="id" type="ID" />
+		<attribute name="name" type="string" use="required" />
+		<attribute name="key" type="float" use="optional" default="0.0"/>
+	</attributeGroup>
+
+	<element name="data" type="xml3d:DataType" />
+
+	<complexType name="DataType">
+		<complexContent>
+			<extension base="xml3d:XML3DDataContainer">
+				<attribute default="" name="map" type="string" />
+				<attribute default="" name="compute" type="string" />
+				<attribute default="" name="script" type="anyURI" ecore:reference="xml3d:ScriptType"/>
+			</extension>
+		</complexContent>
+	</complexType>
+
+
+	<element name="mesh">
+		<complexType>
+			<complexContent>
+				<extension base="xml3d:XML3DDataContainer">
+					<attribute name="type" type="xml3d:MeshTypeNames" default="triangles">
+						<annotation>
+							<documentation>
+								This attribute specifies the type of the mesh.
+								Currently, triangles and lineStrips are supported.
+							</documentation>
+						</annotation>
+
+					</attribute>
+					<attribute name="visible" type="boolean" default="true"/>
+					<attributeGroup ref="xml3d:EventAttributes"></attributeGroup>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+
+
+	<complexType name="LightShaderType">
+		<complexContent>
+			<extension base="xml3d:XML3DDataContainer">
+				<attribute default="" name="script" type="anyURI"
+					ecore:reference="xml3d:ScriptType">
+					<annotation>
+						<documentation />
+
+					</annotation>
+				</attribute>
+
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="transform" type="xml3d:TransformType" />
+	<simpleType name="BooleanArray">
+		<list itemType="boolean" />
+	</simpleType>
+	<simpleType ecore:instanceClass="gnu.trove.list.TFloatList" name="FloatArray">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType ecore:instanceClass="gnu.trove.list.TFloatList" name="Float2Array">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType ecore:instanceClass="gnu.trove.list.TFloatList" name="Float3Array">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType ecore:instanceClass="gnu.trove.list.TFloatList" name="Float4Array">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType ecore:instanceClass="gnu.trove.list.TFloatList" name="Float4x4Array">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType ecore:instanceClass="gnu.trove.list.TIntList" name="IntArray">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType ecore:instanceClass="gnu.trove.list.TIntList" name="Int4Array">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType ecore:instanceClass="gnu.trove.list.TFloatList" name="XML3DVec3">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType ecore:instanceClass="gnu.trove.list.TFloatList" name="XML3DRotation">
+		<restriction base="string"/>
+	</simpleType>
+
+	<!-- Enumerations -->
+	<simpleType name="TextureTypes">
+		<restriction base="string">
+			<enumeration value="2D" />
+			<enumeration value="1D" />
+			<enumeration value="3D" />
+		</restriction>
+	</simpleType>
+	<simpleType name="FilterTypes">
+		<restriction base="string">
+			<enumeration value="none" />
+			<enumeration value="nearest" />
+			<enumeration value="linear" />
+		</restriction>
+	</simpleType>
+	<simpleType name="WrapTypes">
+		<restriction base="string">
+			<enumeration value="clamp" />
+			<enumeration value="repeat" />
+			<enumeration value="border" />
+		</restriction>
+	</simpleType>
+
+	<simpleType name="ContentType">
+		<annotation>
+			<documentation>
+				media type, as per [RFC2045]
+      </documentation>
+		</annotation>
+		<restriction base="string" />
+	</simpleType>
+
+	<complexType name="HTMLElement" abstract="true">
+		<attribute name="id" type="ID" />
+		<attribute name="style" type="string" default=""/>
+		<attribute name="class" type="NMTOKENS" />
+		<anyAttribute namespace="##other" processContents="skip"/>
+	</complexType>
+
+	<complexType name="XML3DElement" abstract="true">
+		<complexContent>
+			<extension base="xml3d:HTMLElement">
+			<sequence minOccurs="1" maxOccurs="1">
+				<any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
+			</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="XML3DDataContainer" abstract="true">
+		<complexContent>
+			<extension base="xml3d:XML3DElement">
+				<sequence  ecore:featureMap="children" minOccurs="0" maxOccurs="unbounded">
+					<choice>
+						<element ref="xml3d:data" />
+						<group ref="xml3d:ValueTypeGroup" />
+					</choice>
+				</sequence>
+				<attribute default="" name="proto" type="anyURI"
+					ecore:reference="xml3d:DataType" />
+				<attribute default="" name="src" type="anyURI"
+					ecore:reference="xml3d:DataType" />
+			</extension>
+		</complexContent>
+	</complexType>
+
+
+	<group name="ValueTypeGroup">
+		<choice>
+			<element ref="xml3d:bool" />
+			<element ref="xml3d:float" />
+			<element ref="xml3d:float2" />
+			<element ref="xml3d:float3" />
+			<element ref="xml3d:float4" />
+			<element ref="xml3d:float4x4" />
+			<element ref="xml3d:int" />
+			<element ref="xml3d:int4" />
+			<element ref="xml3d:texture" />
+		</choice>
+	</group>
+
+
+
+	<group name="ReferenceableGroup">
+		<annotation>
+			<documentation>
+				Group with all elements that may appear in a defs
+				section and
+				can be referenced from other places in the scene.
+			</documentation>
+		</annotation>
+		<choice>
+			<element ref="xml3d:shader" />
+			<element ref="xml3d:lightshader" />
+			<element ref="xml3d:data" />
+			<element ref="xml3d:transform" />
+			<element ref="xml3d:mesh" />
+			<element ref="xml3d:script" />
+		</choice>
+	</group>
+
+	<group name="TransformableGroup">
+		<annotation>
+			<documentation>
+				Group with all elements that are effected by the
+				transformation hierarchy.
+			</documentation>
+		</annotation>
+		<choice>
+			<element ref="xml3d:mesh" />
+			<element ref="xml3d:group" />
+			<element ref="xml3d:view" />
+			<element ref="xml3d:light" />
+			<element ref="xml3d:script" />
+		</choice>
+	</group>
+
+	<element name="img">
+		<complexType>
+			<complexContent>
+				<extension base="xml3d:HTMLElement">
+					<attribute name="src" type="anyURI"/>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+
+
+	<element name="light">
+		<complexType>
+			<complexContent>
+				<extension base="xml3d:XML3DElement">
+					<attribute name="shader" type="anyURI" ecore:reference="xml3d:LightShaderType" />
+					<attribute name="intensity" type="float" />
+					<attribute name="global" type="boolean" />
+					<attribute name="visible" type="boolean" default="true"/>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+
+	<element name="group">
+		<complexType>
+			<complexContent>
+				<extension base="xml3d:XML3DElement">
+					<sequence maxOccurs="unbounded" minOccurs="0" ecore:featureMap="children">
+						<element ref="xml3d:defs" />
+						<group ref="xml3d:TransformableGroup" />
+					</sequence>
+					<attribute name="shader" type="anyURI" ecore:reference="xml3d:ShaderType" />
+					<attribute name="transform" type="anyURI"
+						ecore:reference="xml3d:XML3DElement" />
+					<attribute name="visible" type="boolean" default="true"/>
+					<attributeGroup ref="xml3d:EventAttributes"></attributeGroup>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+
+
+
+
+	<complexType name="ShaderType">
+		<complexContent>
+			<extension base="xml3d:XML3DDataContainer">
+				<attribute default="" name="script" type="anyURI"
+					ecore:reference="xml3d:ScriptType">
+					<annotation />
+				</attribute>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="ViewType">
+		<complexContent>
+			<extension base="xml3d:XML3DElement">
+				<attribute default="0 0 0" name="position" type="xml3d:XML3DVec3">
+					<annotation />
+				</attribute>
+				<attribute default="0 0 1 0" name="orientation" type="xml3d:XML3DRotation">
+					<annotation />
+				</attribute>
+				<attribute default="0.78539816339744828" name="fieldOfView"
+					type="float">
+					<annotation />
+				</attribute>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="TransformType">
+		<complexContent>
+			<extension base="xml3d:XML3DElement">
+				<attribute default="0 0 0" name="translation" type="xml3d:XML3DVec3">
+					<annotation />
+				</attribute>
+				<attribute default="1 1 1" name="scale" type="xml3d:XML3DVec3">
+					<annotation />
+				</attribute>
+				<attribute default="0 0 1 0" name="rotation" type="xml3d:XML3DRotation">
+					<annotation />
+				</attribute>
+				<attribute default="0 0 0" name="center" type="xml3d:XML3DVec3">
+					<annotation />
+				</attribute>
+				<attribute default="0 0 1 0" name="scaleOrientation" type="xml3d:XML3DRotation">
+					<annotation />
+				</attribute>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="ScriptType" mixed="true">
+		<complexContent>
+			<extension base="xml3d:HTMLElement">
+				<attribute name="src" type="anyURI" />
+				<attribute use="required" name="type" type="xml3d:ContentType" />
+
+			</extension>
+		</complexContent>
+	</complexType>
+	
+	<simpleType name="MeshTypeNames">
+		<restriction base="string">
+			<enumeration value="triangles"></enumeration>
+			<enumeration value="lineStrips"></enumeration>
+		</restriction>
+	</simpleType>
+	
+  <attributeGroup name="EventAttributes">
+    <attribute name="onclick" type="string"/>
+    <attribute name="ondblclick" type="string"/>
+    <attribute name="onmousedown" type="string"/>
+    <attribute name="onmouseup" type="string"/>
+    <attribute name="onmouseover" type="string"/>
+    <attribute name="onmousemove" type="string"/>
+    <attribute name="onmouseout" type="string"/>
+    <attribute name="onkeypress" type="string"/>
+    <attribute name="onkeydown" type="string"/>
+    <attribute name="onkeyup" type="string"/>
+    <attribute name="ondrop" type="string"/>
+  </attributeGroup>
+</schema>

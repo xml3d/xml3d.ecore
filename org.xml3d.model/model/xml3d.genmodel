@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.xml3d.model/src" modelPluginID="org.xml3d.model"
+    modelName="Xml3d" importerID="org.eclipse.xsd.ecore.importer" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>xml3d_manual.xsd</foreignModel>
+  <genPackages prefix="Xml3d" basePackage="org.xml3d._2009" resource="XML" disposableProviderFactory="true"
+      ecorePackage="xml3d.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="xml3d.ecore#//FilterTypes">
+      <genEnumLiterals ecoreEnumLiteral="xml3d.ecore#//FilterTypes/none"/>
+      <genEnumLiterals ecoreEnumLiteral="xml3d.ecore#//FilterTypes/nearest"/>
+      <genEnumLiterals ecoreEnumLiteral="xml3d.ecore#//FilterTypes/linear"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="xml3d.ecore#//MeshTypeNames">
+      <genEnumLiterals ecoreEnumLiteral="xml3d.ecore#//MeshTypeNames/triangles"/>
+      <genEnumLiterals ecoreEnumLiteral="xml3d.ecore#//MeshTypeNames/lineStrips"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="xml3d.ecore#//TextureTypes">
+      <genEnumLiterals ecoreEnumLiteral="xml3d.ecore#//TextureTypes/_2D"/>
+      <genEnumLiterals ecoreEnumLiteral="xml3d.ecore#//TextureTypes/_1D"/>
+      <genEnumLiterals ecoreEnumLiteral="xml3d.ecore#//TextureTypes/_3D"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="xml3d.ecore#//WrapTypes">
+      <genEnumLiterals ecoreEnumLiteral="xml3d.ecore#//WrapTypes/clamp"/>
+      <genEnumLiterals ecoreEnumLiteral="xml3d.ecore#//WrapTypes/repeat"/>
+      <genEnumLiterals ecoreEnumLiteral="xml3d.ecore#//WrapTypes/border"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="xml3d.ecore#//BooleanArray"/>
+    <genDataTypes ecoreDataType="xml3d.ecore#//ContentType"/>
+    <genDataTypes ecoreDataType="xml3d.ecore#//FilterTypesObject"/>
+    <genDataTypes ecoreDataType="xml3d.ecore#//Float2Array"/>
+    <genDataTypes ecoreDataType="xml3d.ecore#//Float3Array"/>
+    <genDataTypes ecoreDataType="xml3d.ecore#//Float4Array"/>
+    <genDataTypes ecoreDataType="xml3d.ecore#//Float4x4Array"/>
+    <genDataTypes ecoreDataType="xml3d.ecore#//FloatArray"/>
+    <genDataTypes ecoreDataType="xml3d.ecore#//Int4Array"/>
+    <genDataTypes ecoreDataType="xml3d.ecore#//IntArray"/>
+    <genDataTypes ecoreDataType="xml3d.ecore#//MeshTypeNamesObject"/>
+    <genDataTypes ecoreDataType="xml3d.ecore#//TextureTypesObject"/>
+    <genDataTypes ecoreDataType="xml3d.ecore#//WrapTypesObject"/>
+    <genDataTypes ecoreDataType="xml3d.ecore#//XML3DRotation"/>
+    <genDataTypes ecoreDataType="xml3d.ecore#//XML3DVec3"/>
+    <genClasses ecoreClass="xml3d.ecore#//BoolType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//BoolType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//BoolType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//BoolType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="xml3d.ecore#//DataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//DataType/compute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//DataType/map"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference xml3d.ecore#//DataType/script"/>
+    </genClasses>
+    <genClasses ecoreClass="xml3d.ecore#//DefsType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute xml3d.ecore#//DefsType/children"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//DefsType/shader"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//DefsType/lightshader"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//DefsType/data"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//DefsType/transform"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//DefsType/mesh"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//DefsType/script"/>
+    </genClasses>
+    <genClasses ecoreClass="xml3d.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/bool"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/data"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/defs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/float"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/float2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/float3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/float4"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/float4x4"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/group"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/img"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/int"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/int4"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/light"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/lightshader"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/mesh"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/script"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/shader"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/texture"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/transform"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/view"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xml3d.ecore#//DocumentRoot/xml3d"/>
+    </genClasses>
+    <genClasses ecoreClass="xml3d.ecore#//Float2Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Float2Type/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Float2Type/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Float2Type/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Float2Type/name"/>
+    </genClasses>
+    <genClasses ecoreClass="xml3d.ecore#//Float3Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Float3Type/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Float3Type/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Float3Type/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Float3Type/name"/>
+    </genClasses>
+    <genClasses ecoreClass="xml3d.ecore#//Float4Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Float4Type/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Float4Type/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Float4Type/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Float4Type/name"/>
+    </genClasses>
+    <genClasses ecoreClass="xml3d.ecore#//Float4x4Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Float4x4Type/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Float4x4Type/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Float4x4Type/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Float4x4Type/name"/>
+    </genClasses>
+    <genClasses ecoreClass="xml3d.ecore#//FloatType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//FloatType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//FloatType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//FloatType/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//FloatType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="xml3d.ecore#//GroupType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute xml3d.ecore#//GroupType/children"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//GroupType/defs"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//GroupType/mesh"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//GroupType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//GroupType/view"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//GroupType/light"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//GroupType/script"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//GroupType/onclick"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//GroupType/ondblclick"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//GroupType/ondrop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//GroupType/onkeydown"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//GroupType/onkeypress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//GroupType/onkeyup"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//GroupType/onmousedown"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//GroupType/onmousemove"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//GroupType/onmouseout"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//GroupType/onmouseover"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//GroupType/onmouseup"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference xml3d.ecore#//GroupType/shader"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference xml3d.ecore#//GroupType/transform"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//GroupType/visible"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="xml3d.ecore#//HTMLElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//HTMLElement/class"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//HTMLElement/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//HTMLElement/style"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute xml3d.ecore#//HTMLElement/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="xml3d.ecore#//ImgType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//ImgType/src"/>
+    </genClasses>
+    <genClasses ecoreClass="xml3d.ecore#//Int4Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Int4Type/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Int4Type/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Int4Type/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Int4Type/name"/>
+    </genClasses>
+    <genClasses ecoreClass="xml3d.ecore#//IntType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//IntType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//IntType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//IntType/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//IntType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="xml3d.ecore#//LightShaderType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference xml3d.ecore#//LightShaderType/script"/>
+    </genClasses>
+    <genClasses ecoreClass="xml3d.ecore#//LightType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//LightType/global"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//LightType/intensity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference xml3d.ecore#//LightType/shader"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//LightType/visible"/>
+    </genClasses>
+    <genClasses ecoreClass="xml3d.ecore#//MeshType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//MeshType/onclick"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//MeshType/ondblclick"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//MeshType/ondrop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//MeshType/onkeydown"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//MeshType/onkeypress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//MeshType/onkeyup"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//MeshType/onmousedown"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//MeshType/onmousemove"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//MeshType/onmouseout"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//MeshType/onmouseover"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//MeshType/onmouseup"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//MeshType/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//MeshType/visible"/>
+    </genClasses>
+    <genClasses ecoreClass="xml3d.ecore#//ScriptType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute xml3d.ecore#//ScriptType/mixed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//ScriptType/src"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//ScriptType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="xml3d.ecore#//ShaderType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference xml3d.ecore#//ShaderType/script"/>
+    </genClasses>
+    <genClasses ecoreClass="xml3d.ecore#//TextureType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xml3d.ecore#//TextureType/img"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//TextureType/borderColor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//TextureType/filterMag"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//TextureType/filterMin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//TextureType/filterMip"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//TextureType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//TextureType/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//TextureType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//TextureType/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//TextureType/wrapS"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//TextureType/wrapT"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//TextureType/wrapU"/>
+    </genClasses>
+    <genClasses ecoreClass="xml3d.ecore#//TransformType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//TransformType/center"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//TransformType/rotation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//TransformType/scale"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//TransformType/scaleOrientation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//TransformType/translation"/>
+    </genClasses>
+    <genClasses ecoreClass="xml3d.ecore#//ViewType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//ViewType/fieldOfView"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//ViewType/orientation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//ViewType/position"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="xml3d.ecore#//XML3DDataContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute xml3d.ecore#//XML3DDataContainer/children"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//XML3DDataContainer/data"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//XML3DDataContainer/bool"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//XML3DDataContainer/float"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//XML3DDataContainer/float2"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//XML3DDataContainer/float3"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//XML3DDataContainer/float4"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//XML3DDataContainer/float4x4"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//XML3DDataContainer/int"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//XML3DDataContainer/int4"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//XML3DDataContainer/texture"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference xml3d.ecore#//XML3DDataContainer/proto"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference xml3d.ecore#//XML3DDataContainer/src"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="xml3d.ecore#//XML3DElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute xml3d.ecore#//XML3DElement/any"/>
+    </genClasses>
+    <genClasses ecoreClass="xml3d.ecore#//Xml3dType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute xml3d.ecore#//Xml3dType/children"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//Xml3dType/defs"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//Xml3dType/mesh"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//Xml3dType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//Xml3dType/view"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//Xml3dType/light"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xml3d.ecore#//Xml3dType/script"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference xml3d.ecore#//Xml3dType/activeView"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Xml3dType/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Xml3dType/onclick"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Xml3dType/ondblclick"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Xml3dType/ondrop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Xml3dType/onkeydown"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Xml3dType/onkeypress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Xml3dType/onkeyup"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Xml3dType/onmousedown"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Xml3dType/onmousemove"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Xml3dType/onmouseout"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Xml3dType/onmouseover"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Xml3dType/onmouseup"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xml3d.ecore#//Xml3dType/width"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
